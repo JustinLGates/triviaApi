@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <title>jeopardy</title>
+  </head>
+
+  <body>
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h1>Trivia game</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div id="cash"></div>
+        </div>
+      </div>
+      <div class="row" id="start-btn">
+        <div class="col">
+          <button
+            onclick="app.gameController.startGame()"
+            class="btn btn-primary"
+          >
+            Start
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="question" class=""></div>
+          <div id="answer" class="hidden"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="timer" class="">timer</div>
+          <button
+            onclick="app.gameController.endTimer()"
+            id="end-timer-btn"
+            class="btn btn-danger"
+          >
+            end timer
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button
+            id="yes"
+            onclick="app.gameController.yes()"
+            class="btn btn-success hidden"
+          >
+            Yes
+          </button>
+          <button
+            id="no"
+            onclick="app.gameController.no()"
+            class="btn btn-danger hidden"
+          >
+            No
+          </button>
+          <div id="next-btn" class="col-12">
+            <button onclick="app.gameController.next()" class="btn btn-primary">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="app/main.js" type="module"></script>
+  </body>
+</html>
